@@ -1,3 +1,4 @@
+## used to create a package of this ml project so that other can install this into their system like other python packages by uploading inside pypi.
 from setuptools import find_packages,setup
 from typing import List
 

@@ -1,4 +1,4 @@
 pandas
 numpy
 seaborn
--e .
+-e . ## automatically run the setup.py file.
