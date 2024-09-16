@@ -1,4 +1,6 @@
 pandas
 numpy
 seaborn
--e . ## automatically run the setup.py file.
+matplotlib
+
+#-e . ## automatically run the setup.py file.
