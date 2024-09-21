@@ -20,13 +20,24 @@ from src.utils import  save_object
 from src.utils import  evaluate_model
 
 @dataclass
-class Model_Trainer_Config:
+class Model_Trainer_Config: # Creatning a class variable to store the ML model path
     trained_model_file_path = os.path.join('artifacts','model.pkl')
 
 class Model_Trainer:
+    """
+     1. Creating a object for the Model_Trainer_Config class to access the path variable
+    """
     def __init__(self):
         self.model_trainer_config = Model_Trainer_Config()
     def initiate_train(self,train_arr,test_arr):
+        """
+            1. Splitting the train and test data into input and target.
+            2. Creating a models dictinory containing all the models we are using.
+            3. Calling the evaluate_model function in the utils.py for training the model
+            4. Storing the best_score and list of all the model names with their score from the result of above function.
+            5. Calling the save_object function in the utils.py to save the model in the modelpath.
+            6. Returning the r2_score of the best model
+        """
         try:
             logging.info("Splitting training and test input data")
             X_train,Y_train,X_test,Y_test = (
